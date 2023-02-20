@@ -56,7 +56,7 @@ const modes = [
 let currentMode = modes[0]
 
 function getMode() { return modes.indexOf(currentMode) }
-function nextMode() { return currentMode = modes[getMode() + 1] }
+function nextMode() { currentMode = modes[getMode() + 1] }
 
 //*Button logic
 var selectedConeType = document.getElementById("cone")

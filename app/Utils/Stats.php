@@ -120,9 +120,11 @@ function onwershipPoints($moves, $otherPlayerMoves)
                 break;
             }
         }
-
         foreach ($otherPlayerMoves as $player) {
+            if (sizeof($player) == 0) continue;
             foreach ($player as $conflictingMove) {
+                if ($conflictingMove == new stdClass()) continue; //*This catches if movelist is empty
+                 
                 $opponentLocation = $conflictingMove->location;
                 $opponentTimestamp = $conflictingMove->timestamp;
 
@@ -156,14 +158,12 @@ function onwershipPoints($moves, $otherPlayerMoves)
 function calculateScore($entry, $otherEntries)
 {
     $score = 0;
+    if ($entry == [] || $entry->moves == "[{}]") return 0;
 
-    $moves = $entry->moves;
-    $moves = json_decode($moves);
+    $moves = json_decode($entry->moves);
 
 
-    $otherMoves = array(
-
-    );
+    $otherMoves = array();
     for ($x = 0; $x < sizeof($otherEntries); $x++) {
         $otherMoves[$x] = json_decode(($otherEntries[$x]->moves));
     }

@@ -17,11 +17,9 @@ class Home extends Controller
                 array_push($teams, $view->pov);
             }
         }
-        foreach($teams as $team){
-            
-            $averageScores[$team] = calculateAverageScore($team);
-            
 
+        foreach($teams as $team){
+            $averageScores[$team] = calculateAverageScore($team);
 
         }
         arsort($averageScores);
