@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -155,12 +155,19 @@ function onwershipPoints($moves, $otherPlayerMoves)
 
 }
 
-function calculateScore($entry, $otherEntries)
+function calculateScore($entry)
 {
     $score = 0;
     if ($entry == [] || $entry->moves == "[{}]") return 0;
 
     $moves = json_decode($entry->moves);
+
+    if ($entry->match_id == null){
+        $otherEntries = [];
+    }
+    else{
+        $otherEntries = DB::select("select * from views where match_id=$entry->match_id and pov!=$entry->pov");
+    }
 
 
     $otherMoves = array();
@@ -216,8 +223,7 @@ function calculateAverageScore($teamID)
     }
 
     foreach ($views as $view) {
-        $perspectives = DB::select("select * from views where match_id='$view->match_id' and pov !='$view->pov'");
-        $totalScore += calculateScore($view, $perspectives);
+        $totalScore += calculateScore($view);
     }
     return $totalScore/$numViews;
 

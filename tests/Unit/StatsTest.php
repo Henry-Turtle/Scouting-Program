@@ -37,12 +37,15 @@ class StatsTest extends TestCase
         $nullView = null;
         $this->assertEquals(0.00, accuracyPercent($nullView));
     }
+
+    //! DUE TO REFACTOR OF calculate_score, THESE TESTS NO LONGER 
+    //! WORK AND NEED TO BE REWRITTEN
     public function test_null_calculate_score(){
 
         $nullView = [];
         $nullOtherViews = [];
 
-        $this->assertEquals(0.00, calculateScore($nullView, $nullOtherViews));
+        $this->assertEquals(0.00, calculateScore($nullView));
 
         
     }
@@ -50,14 +53,20 @@ class StatsTest extends TestCase
         $noMoves = View::factory()->make();
         $otherNoMoves = View::factory(3)->make();
 
-        $this->assertEquals(0.00, calculateScore($noMoves, $otherNoMoves));
+        $this->assertEquals(0.00, calculateScore($noMoves));
+    }
+
+    public function test_no_other_views(){
+        $view = View::factory(["moves"=>'[{"coneType":"cone", "location": "23", "timestamp":"10.00"}]'])->make();
+        $this->assertEquals(8.0, calculateScore($view));
+        
     }
 
     public function test_regular_calculate_score(){
         $regularView = View::factory(["moves"=>'[{"coneType":"cone", "location": "23", "timestamp":"10.00"}]'])->make();
         $regularOtherViews = [View::factory()->make(), View::factory()->make(), View::factory(["moves"=>'[{"coneType": "miss", "location":"23","timestamp":"9.00"}]'])->make()];
         
-        $this->assertEquals(8.00, calculateScore($regularView, $regularOtherViews));
+        $this->assertEquals(8.00, calculateScore($regularView));
     }
     public function test_ownership_points(){
         $nullMoves = [];

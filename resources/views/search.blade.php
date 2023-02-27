@@ -15,14 +15,7 @@ else{
 }
 ?>
 
-<script defer>
-function search(){
-    let team_id = document.getElementById("team").value
-    window.location.href = "/search/" + team_id
-}
-
-</script>
-<div style = "display: flex; flex-direction: row; height: 10%">
+<div style = "display: flex; flex-direction: row; height: auto; margin-top: 20px;">
 <?php echo '<input type = "text" placeholder="'.$placeholder.'" id = "team">'?>
 <input type = "submit" id = "submit" onclick = "search()" value = "Submit">
 </div>
@@ -30,9 +23,39 @@ function search(){
 <?php 
 //$plucked = $db->pluck("id", "teams");
 foreach($db as $entry){
-    $points = calculateScore($entry, DB::select("select * from views where match_id=$entry->match_id and pov!=$entry->pov"));
-    $acc = missPercent($entry);
-    echo "<h2 onclick = 'click(this)' id = '" .$entry->pov. "'>" .$entry->pov. ": " .$points. ", " .$acc. " % accuracy</h2>";
+    // Returns a game element for the view
+
+    echo "<button class = 'game' id = '$entry->id'onclick = 'getGame(this)'>";
+    if ($entry->match_id != null){
+        $points = calculateScore($entry);
+    }
+    else{
+        $points = calculateScore($entry);
+    }
+    
+    $acc = accuracyPercent($entry);
+
+    //puts the POV team onto the button
+    echo "<h2 class = 'pov' style = 'color: $entry->alliance;'>Team $entry->pov </h2>";
+
+    
+    //Puts the other teams on the button
+    echo "<div class = 'otherTeams'>";
+    foreach(explode( ",", $entry->teams) as $otherTeam){
+        if($otherTeam != $entry->pov){
+            echo "<h2 style = 'font-size: 2vh;'>$otherTeam</h2>";
+        }
+    }
+    echo "</div>";
+
+    //Puts score and accuracy on the button
+    $score = calculateScore($entry);
+    echo "<h2 class = 'score'>Score: $score</h2>";
+    $accuracy = accuracyPercent($entry);
+    echo "<h2 class = 'accuracy'>Accuracy: $accuracy%</h2>";
+    
+   
+    echo "</button>";
 }
 
 ?>

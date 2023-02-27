@@ -3,7 +3,6 @@
     width: 40%;
     height: 100%;
     text-align: center;
-    margin-top: 20px;
     margin-left: 20px;
     align-self: flex-start;
     font-size: 7vh;
@@ -13,7 +12,6 @@
     width: 30%;
     height: 100%;
     text-align: center;
-    margin-top: 20px;
     margin-left: 20px;
     font-size: 7vh;
     background-color: lightgray;
@@ -24,21 +22,32 @@
     height: 60%;
     margin-top: 20px;
     overflow: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 }
 
 .game{
+    height: 50px;
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 20%;
-    background-color: white;
+    flex-direction: row;
+    align-items: center;
 }
 
-.game div{
-    height: 50%;
-    font-size: 2vh
+.game:hover{
+    cursor: pointer;
+}
 
+.otherTeams{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
 
+.score, .accuracy{
+    padding-left: 10px;;
 }
 
 
