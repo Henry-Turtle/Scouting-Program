@@ -1,5 +1,4 @@
 function getGame(element){
-    alert(true)
     window.location.href = "/game_info/" + element.id;
 }
 

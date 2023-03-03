@@ -37,7 +37,8 @@ Route::get("/sync", 'App\Http\Controllers\Sync@index');
 
 Route::post("/sync", "App\Http\Controllers\Sync@store");
 
-Route::get("/game_info/{view_id}", "app\Http\Controllers\GameInfo@index");
+Route::get("/game_info/{view_id}", "App\Http\Controllers\GameInfo@index");
+
 
 /*
 

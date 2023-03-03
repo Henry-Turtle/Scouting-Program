@@ -9,6 +9,6 @@ class GameInfo extends Controller
 {
     public function index($view_id){
         $db = DB::select("select * from views where id=$view_id");
-        return view("game_info", ["view"=>$db]);
+        return view("game_info", ["view"=>$db[0]]); //*Only one view
     }
 }

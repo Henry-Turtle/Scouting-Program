@@ -1,3 +1,86 @@
-table, th, td{
+*{
+    z-index: 2;
+}
+#field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vh;
+    height: 50vh;
+    background-color: aliceblue;
+}
+
+.terminals{
+    display: flex;
+    flex-direction: row;
+    height: calc(100%/12);
+    width: 100%;
+}
+
+.t1, .t2{
+    color: white;
+}
+
+.t2{
+
+    margin-left: auto;
+}
+
+.blue{
+    background-color: Rgba(0, 0, 255, 50);
+}
+
+.red{
+    background-color: Rgba(255, 0, 0, 50);
+}
+
+#center{
+    height: calc(250%/3);
+    width: calc(250%/3);
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.junction{
+    width: 20%;
+    background-color: aliceblue;
+    color: aliceblue;
     border: 1px solid black;
+    z-index: 10;
+    font-size: 2.5vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.junction p{
+    z-index: 10;
+}
+
+
+.cone-circle{
+    position:absolute;
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+}
+
+.beacon-circle{
+    position:absolute;
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    background-color: gold;
 }
