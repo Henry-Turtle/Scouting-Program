@@ -7,7 +7,7 @@
 
 @section("content")
 
-<h1>{{ $view->pov }}</h1>
+<h1>Team {{ $view->pov }}</h1>
 
 <?php 
 
@@ -17,8 +17,8 @@
 <!--Define the table to show moves-->
 <div id = "field">
     <div class = "terminals">
-        <div class = "t1 blue">H</div>
-        <div class = "t2 red">1</div>
+        <div class = "terminal t1 blue-border" id = '00' data-cones = '0'></div>
+        <div class = "terminal t2 red-border" id = '60' data-cones = '0'></div>
     </div>
 
     <div id = "center">
@@ -62,8 +62,8 @@
     </div>
 
     <div class = "terminals">
-        <div class = "t1 red">H</div>
-        <div class = "t2 blue">1</div>
+        <div class = "terminal t1 red-border" id = "06" data-cones = '0'></div>
+        <div class = "terminal t2 blue-border" id = "66" data-cones = '0'></div>
     </div>
 </div>
 

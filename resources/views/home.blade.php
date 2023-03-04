@@ -24,7 +24,7 @@
 <div id = "leaderboard">
 <?php 
 foreach ($scores as $team => $score) {
-    echo "<h1>$team average score: $score</h1>";
+    echo "<div class = 'team'>$team average score: $score</div>";
 }
 ?>
 </div>

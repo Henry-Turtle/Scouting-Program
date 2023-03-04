@@ -50,7 +50,7 @@ hr{
     align-items: center;
     background-color: darkgray;
     position: relative;
-
+    overflow: hidden;
 }
 
 #circle{

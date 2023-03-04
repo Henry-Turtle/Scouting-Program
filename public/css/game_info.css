@@ -19,11 +19,31 @@
 
 .t1, .t2{
     color: white;
+    width: calc(100%/12);
+    height: calc(100%-2px);
 }
 
 .t2{
-
     margin-left: auto;
+
+}
+
+.red-border{
+    border: 1px solid #ED1C24;
+}
+
+.blue-border{
+    border: 1px solid #0066B3;
+}
+
+.red-terminal-filled{
+    background-color: #ED1C24;
+    height: 100%;
+}
+
+.blue-terminal-filled{
+    background-color: #0066B3;
+    height: 100%;
 }
 
 .blue{
@@ -37,7 +57,6 @@
 #center{
     height: calc(250%/3);
     width: calc(250%/3);
-    background-color: aqua;
     display: flex;
     flex-direction: column;
 }
@@ -74,6 +93,11 @@
     width: 70%;
     height: 70%;
     z-index: 1;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .beacon-circle{
@@ -82,5 +106,10 @@
     width: 70%;
     height: 70%;
     z-index: 1;
-    background-color: gold;
+    background-color: gold !important;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

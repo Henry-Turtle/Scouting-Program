@@ -5,9 +5,6 @@ moves.forEach(move=>{
         return
     }
 
-    if (move.location.includes("0") || move.location.includes("6")){
-        return //!HANDLE THE CASE OF TERMINAL LOCATIONS
-    }
     junction = document.getElementById(move.location)
     junction.dataset.cones = (parseInt(junction.dataset.cones)+1).toString()
 
@@ -24,7 +21,11 @@ Array.prototype.forEach.call(document.getElementsByClassName("junction"), functi
         circle = document.createElement("div")
         circle.classList.add("beacon-circle")
         circle.classList.add(alliance)
-        circle.innerHTML = junction.dataset.cones
+
+        numCones = document.createElement("div")
+        numCones.innerHTML = junction.dataset.cones
+        circle.appendChild(numCones)
+
         junction.appendChild(circle)
     }
     else if (junction.dataset.cones != "0"){
@@ -32,7 +33,25 @@ Array.prototype.forEach.call(document.getElementsByClassName("junction"), functi
         circle = document.createElement("div")
         circle.classList.add("cone-circle")
         circle.classList.add(alliance)
-        circle.innerHTML = junction.dataset.cones
+
+        numCones = document.createElement("div")
+        numCones.innerHTML = junction.dataset.cones
+        circle.appendChild(numCones)
+
         junction.appendChild(circle)
+    }
+})
+
+Array.prototype.forEach.call(document.getElementsByClassName("terminal"), function(terminal){
+    if (terminal.dataset.cones != "0"){
+        filled = document.createElement("div")
+
+        filled.classList.add(alliance + "-terminal-filled")
+        
+        numCones = document.createElement("div")
+        numCones.innerHTML = terminal.dataset.cones
+        filled.appendChild(numCones)
+
+        terminal.appendChild(filled)
     }
 })

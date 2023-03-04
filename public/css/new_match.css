@@ -38,19 +38,19 @@ input{
 }
 
 #red{
-    background-color: lightcoral;
+    background-color: #f68e92;
 }
 
 #red.selected{
-    background-color: red;
+    background-color: #ED1C24;
 }
 
 #blue{
-    background-color: lightskyblue;
+    background-color: #9cd4ff;
 }
 
 #blue.selected{
-    background-color: blue
+    background-color: #0066B3;
 }
 
 
