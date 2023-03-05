@@ -18,12 +18,13 @@ function clicked(element){
 function beginScout(){
 
     let arr = []
-    arr.push(parseInt(document.getElementById("pov_entry").value))
-    arr.push(parseInt(document.getElementById("t2").value))
-    arr.push(parseInt(document.getElementById("t3").value))
-    arr.push(parseInt(document.getElementById("t4").value))
+    
+    arr.push(document.getElementById("pov_entry").value)
+    arr.push(document.getElementById("t2").value)
+    arr.push(document.getElementById("t3").value)
+    arr.push(document.getElementById("t4").value)
 
-    arr = arr.sort(function (a, b){return a-b})
+    arr = arr.sort(function (a, b){return parseInt(a)-parseInt(b)})
 
     let form = document.getElementById("hidden");
 

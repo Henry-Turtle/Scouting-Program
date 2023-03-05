@@ -1,26 +1,16 @@
-@extends('layouts.sidebar')
+@extends("layouts.sidebar")
 
 @section("head")
-<link href =  {{ asset("css/game_info.css") }} rel = "stylesheet">
-<script src = {{ asset("js/game_info.js") }} defer></script>
+<link href =  "{{ asset("css/team_info.css") }}" rel = "stylesheet">
+<script src = "{{ asset("js/team_info.js") }}" defer></script>
 @endsection
+
+
 
 @section("content")
 
-<h1>Team {{ $view->pov }}</h1>
-
-<?php 
-
-?>
-
-<div id = "modes">
-    <button id = "combined" onclick = "selectMode(this)">Combined</button>
-    <button id = "autonomous" onclick = "selectMode(this)">Autonomous</button>
-    <button id = "manual" onclick = "selectMode(this)">Manual</button>
-</div>
-<!--Define the table to show moves-->
-
-
+<h1 id = "team">Team {{ $team_id }}</h1>
+<!--Define Field-->
 <div id = "field">
     <div class = "terminals">
         <div class = "terminal t1" id = '00' data-cones = '0'></div>
@@ -73,6 +63,8 @@
     </div>
 </div>
 
-<input hidden id = "alliance" value = "{{ $view->alliance }}">
-<input hidden id = "moves" value = "{{ $view->moves }}">
+<div id = "hidden">
+    <input id = "views" value = {{ json_encode($views) }} type = "hidden">
+</div>
+
 @endsection

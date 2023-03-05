@@ -62,9 +62,16 @@ function nextMode() { currentMode = modes[getMode() + 1] }
 var selectedConeType = document.getElementById("cone")
 
 function buttonPress(element) {
-    selectedConeType.classList.remove("selected");
-    selectedConeType = element;
-    selectedConeType.classList.add("selected");
+    if (selectedConeType === null){
+        selectedConeType = element
+        element.classList.add("selected")
+    }
+    else{
+        selectedConeType.classList.remove("selected");
+        selectedConeType = element;
+        selectedConeType.classList.add("selected");
+    }
+    
 }
 
 function rotateButton(){
@@ -324,9 +331,16 @@ document.onkeyup = function (e) {
             undo()
             return
     }
-    selectedConeType.classList.remove("selected");
-    selectedConeType = document.getElementById(hotkey);
-    selectedConeType.classList.add("selected");
+    if (selectedConeType === null){
+        selectedConeType = document.getElementById(hotkey)
+        selectedConeType.classList.add("selected")
+    }
+    else{
+        selectedConeType.classList.remove("selected");
+        selectedConeType = document.getElementById(hotkey);
+        selectedConeType.classList.add("selected");
+    }
+    
 
 }
 

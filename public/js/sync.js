@@ -1,6 +1,4 @@
-
-
-
+const views = JSON.parse(document.getElementById("views").value)
 window.onload = function(){
     let test = new WebSocket('ws://172.104.22.21');
     test.addEventListener('open', function(event){
@@ -8,7 +6,7 @@ window.onload = function(){
         document.getElementById("bad").innerHTML = "";
         test.send(JSON.stringify({"aim":"test"}))
     })
-    setTimeout(()=>(test.close()), 1000)
+    setTimeout(()=>(test.close()), 5000)
     if (localStorage.getItem("last_update") == null){
         localStorage.setItem("last_update", 0)
     }

@@ -22,7 +22,8 @@ class ScoutingController extends Controller
         $view->alliance = $request->input("alliance");
         $view->teams = $request->input("teams");
         
-        $view->uploaded_at = date("d/m/y H:i:s");
+        //$view->uploaded_at = date("d/m/y H:i:s");
+        $view->uploaded_at = null;
         $view->save();
 
         return redirect('home')->with('message', 'Game successfully saved');

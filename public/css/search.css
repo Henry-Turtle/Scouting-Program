@@ -1,4 +1,7 @@
 
+h2{
+    user-select: none;
+}
 #team{
     width: 40%;
     height: 100%;
@@ -18,26 +21,40 @@
 }
 
 #matches{
-    width: 80%;
-    height: 60%;
+    width: 85%;
+    height: 65%;
     margin-top: 20px;
     overflow: auto;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: left;
+    padding-top: 10px;
+
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .game{
-    height: 50px;
+    min-height: 50px;
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px;
+
+    border: 0px solid black;
+    border-radius: 10px;
+    background-color: rgb(228, 226, 226);
+    transition: .2s;
 }
 
 .game:hover{
     cursor: pointer;
+    background-color: lightgray;
+    transition: .2s;
 }
 
 .otherTeams{

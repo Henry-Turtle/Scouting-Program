@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel = "stylesheet" href = {{ asset("css/app.css") }}>
+        
         <link rel = "stylesheet" href = {{ asset("css/scout.css") }}>
         <script src = {{ asset("jquery.js") }}></script>
         <script src = {{ asset("js/scout.js") }} defer></script>

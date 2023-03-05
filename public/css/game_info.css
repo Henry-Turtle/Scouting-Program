@@ -1,6 +1,30 @@
 *{
     z-index: 2;
 }
+
+#modes{
+    display: flex;
+    flex-direction: row;
+    width: 50vh;
+    justify-content: space-around;
+}
+
+#modes button{
+    width: 30%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.selected-mode{
+    background-color: #2eb555;
+}
+
+.selected-mode:hover{
+    background-color: #66b67c;
+}
+
 #field{
     display: flex;
     flex-direction: column;
@@ -8,6 +32,8 @@
     width: 50vh;
     height: 50vh;
     background-color: aliceblue;
+    background-image: url("../img/field.svg");
+    background-size:contain;
 }
 
 .terminals{
@@ -17,10 +43,11 @@
     width: 100%;
 }
 
+
 .t1, .t2{
     color: white;
-    width: calc(100%/12);
-    height: calc(100%-2px);
+    width: calc(8.333% - 2px);
+    height: calc(100% - 2px);
 }
 
 .t2{
@@ -28,30 +55,30 @@
 
 }
 
-.red-border{
-    border: 1px solid #ED1C24;
-}
-
-.blue-border{
-    border: 1px solid #0066B3;
-}
-
 .red-terminal-filled{
     background-color: #ED1C24;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .blue-terminal-filled{
     background-color: #0066B3;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .blue{
-    background-color: Rgba(0, 0, 255, 50);
+    background-color: #0066B3;
 }
 
 .red{
-    background-color: Rgba(255, 0, 0, 50);
+    background-color: #ED1C24;
 }
 
 #center{
@@ -70,9 +97,7 @@
 
 .junction{
     width: 20%;
-    background-color: aliceblue;
     color: aliceblue;
-    border: 1px solid black;
     z-index: 10;
     font-size: 2.5vw;
     text-align: center;

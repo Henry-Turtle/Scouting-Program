@@ -3,16 +3,16 @@
 @section("head")
 <link href = "/css/sync.css" rel = "stylesheet">
 <script src = "/js/sync.js" defer></script>
+<script src = {{ asset("jquery.js") }}></script>
 
 
 @endsection
 
 
 @section("content")
-<script>
-    const views = {{ Js::from($views) }}
-    
-</script>
+
+
+
 <div id = "all">
     <div id = "status-container">
         <h1>Server Status:</h1>
@@ -28,5 +28,9 @@
         @csrf <!-- {{ csrf_field() }} -->
     </form>
     
+</div>
+
+<div id = "hidden">
+    <input type = "hidden" value = {{ json_encode($views) }} id = "views">
 </div>
 @endsection

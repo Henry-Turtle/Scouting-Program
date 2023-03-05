@@ -42,8 +42,8 @@ foreach($db as $entry){
     //Puts the other teams on the button
     echo "<div class = 'otherTeams'>";
     foreach(explode( ",", $entry->teams) as $otherTeam){
-        if($otherTeam != $entry->pov){
-            echo "<h2 style = 'font-size: 2vh;'>$otherTeam</h2>";
+        if(!($otherTeam === $entry->pov)){
+            echo "<h2 style = 'font-size: 1.6vh; user-select: none;'>$otherTeam</h2>";
         }
     }
     echo "</div>";
