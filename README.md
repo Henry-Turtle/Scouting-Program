@@ -1,66 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<a href = "https://sites.google.com/gncerobotics.com/gnce-18754/about" style = "display: flex; justify-content: center;"><img src = "./public/img/logo.png" style = "width: 200px;"></a>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h2 style = "text-align: center">Galactic Narwhal Chicken Effect: FTC Team 18754</h2>
+<br>
+<h2>About Scouting Program</h2>
+<p>In the 2022-2023 First Tech Challenge <em>Power Play</em> competition, my robotics team was lucky enought to make it to the World Finals. I was tasked with building a program to track games and visualize patterns, so our team could better strategize in our matches. This is what I created.</p>
 
-## About Laravel
+<h2>Technology</h2>
+<p>One of the problems I encountered was that we would not have WIFI access during the competitions, since it would disturb the robots. Because I am most familiar with web development, I circumvented this problem by packaging my app with Electron, and restricting WIFI features until a connection was established. I built the app with the Laravel PHP framework, which I was very experienced with. Though these choices might not be best, using a technology I knew well led to faster development.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2>App Flow</h2>
+<div class = "double">
+    <img src = "./resources/readme_assets/home.png">
+    <div>The home screen shows all teams ranked by their average score per game. This is helpful if we have to pick teammates, because we can quickly filter out all the lowest scoring teams, and get a rough idea of who the best is. You can also click on the buttons to view a profile of each team</div>
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<div class = "double">
+    <img src = "./resources/readme_assets/team_info.png">
+    <div>The team info page combines all games together and creates a heatmap of cone placement. In this example dataset, we can see that Team 10332 places 15% of their cones on the high junction, and scatters the rest around that junction. They don't travel very far from their side, preferring to fight on their own turf. By looking at this data, we can gain insights into their strategy, possible synergies with us, and ways to defeat them.</div>
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div class = "double">
+<img src = "./resources/readme_assets/new_match.png">
+<div>To record a new match, enter in the team whose perspective you will be recording, which team they will be playing on, and who they will be playing against. The app will later use this information to look through the game and generate detailed statistics</div>
+</div>
 
-## Learning Laravel
+<div class = "double">
+<img src = "./resources/readme_assets/scouting.png">
+<div>The core of the program is as minimalistic as possible. There are buttons with hotkeys to specify what happened, and you click on a junction or terminal to tell where it happened. You can undo mistakes, and there is a rotate button in case you have a different view of the field, though it uses a normalized coordinate system from a singular reference frame. Finally, a timer shows how long has been spent in each mode.</div>
+</div>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<div class = "double">
+<img src = "./resources/readme_assets/search.png">
+<div>After recording games, you can search them up to get more information. Games are sorted by most recent, and include information like opponents, score, and accuracy.</div>
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<div class = "double">
+<img src = "./resources/readme_assets/auto.png">
+<img src = "./resources/readme_assets/manual.png">
+</div>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<div class = "double">
+<img src = "./resources/readme_assets/combined.png">
+<div>Match info pages show cone placement, sorted by auto, manual, and combined. While a team info page can show general strategy trends, these match info pages let you see exact breakdows of a team's placements. It easily lets you see how strong a team's Autonomous mode is, where they place their beacon, and junctions they cycle onto.</div>
+</div>
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<h2>Technical Difficulties</h2>
+<ul>
+<li>For some reason, the program never worked correctly on mac; this ended up not being an issue, becuase we had enough windows computers.</li>
+<li>I never quite got the server running bug free, because the project was discontinued before I finished it</li>
+<li>I would later realize that there are public databases where tons of game information is available. I may reattempt this project in the future, and I will definitely use these APIs instead of manually recording data.
+</ul>
 
-### Premium Partners
+<h2>What I Learned</h2>
+Even though the project was never super successful, I took a lot away from the experience.
+<ul>
+<li>I became a much more proficient web developer, learning about database structure, server requests, and becoming much better with PHP and Laravel</li>
+<li>I'll always remember to look for simple solutions before building up a product. If I had known about the public game info databases before I started, this project would have been much simpler and much more useful to my team/
+<li>I gained confidence in my abilities and a strong work ethic
+</ul>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<style>
+    *{font-family: Verdana, Geneva, Tahoma, sans-serif}
 
-## Code of Conduct
+    .double{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .double img{
+        width: 50%;
+    }
+    .double div{
+        padding-left: 20px;
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    }
+</style>
