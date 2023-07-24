@@ -3,7 +3,7 @@
 <h2 style = "text-align: center">Galactic Narwhal Chicken Effect: FTC Team 18754</h2>
 <br>
 <h2>About Scouting Program</h2>
-<p>In the 2022-2023 First Tech Challenge <em>Power Play</em> competition, my robotics team was lucky enought to make it to the World Finals. I was tasked with building a program to track games and visualize patterns, so our team could better strategize in our matches. This is what I created.</p>
+<p>In the 2022-2023 First Tech Challenge <em>Power Play</em> competition, my robotics team was lucky enough to make it to the World Finals. I was tasked with building a program to track games and visualize patterns, so our team could better strategize in our matches. This is what I created.</p>
 
 <h2>Technology</h2>
 <p>One of the problems I encountered was that we would not have WIFI access during the competitions, since it would disturb the robots. Because I am most familiar with web development, I circumvented this problem by packaging my app with Electron, and restricting WIFI features until a connection was established. I built the app with the Laravel PHP framework, which I was very experienced with. Though these choices might not be best, using a technology I knew well led to faster development.</p>
@@ -32,13 +32,13 @@
 <img src = "./resources/readme_assets/auto.png">
 <img src = "./resources/readme_assets/manual.png">
 <img src = "./resources/readme_assets/combined.png">
-<div>Match info pages show cone placement, sorted by auto, manual, and combined. While a team info page can show general strategy trends, these match info pages let you see exact breakdows of a team's placements. It easily lets you see how strong a team's Autonomous mode is, where they place their beacon, and junctions they cycle onto.</div>
+<div>Match info pages show cone placement, sorted by auto, manual, and combined. While a team info page can show general strategy trends, these match info pages let you see the exact breakdowns of a team's placements. It easily lets you see how strong a team's Autonomous mode is, where they place their beacon, and junctions they cycle onto.</div>
 <br>
 
 
 <h2>Technical Difficulties</h2>
 <ul>
-<li>For some reason, the program never worked correctly on mac; this ended up not being an issue, becuase we had enough windows computers.</li>
+<li>For some reason, the program never worked correctly on mac; this ended up not being an issue, because we had enough windows computers.</li>
 <li>I never quite got the server running bug free, because the project was discontinued before I finished it</li>
 <li>I would later realize that there are public databases where tons of game information is available. I may reattempt this project in the future, and I will definitely use these APIs instead of manually recording data.
 </ul>
