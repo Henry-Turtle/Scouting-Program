@@ -9,40 +9,31 @@
 <p>One of the problems I encountered was that we would not have WIFI access during the competitions, since it would disturb the robots. Because I am most familiar with web development, I circumvented this problem by packaging my app with Electron, and restricting WIFI features until a connection was established. I built the app with the Laravel PHP framework, which I was very experienced with. Though these choices might not be best, using a technology I knew well led to faster development.</p>
 
 <h2>App Flow</h2>
-<div class = "double">
-    <img src = "./resources/readme_assets/home.png">
-    <div>The home screen shows all teams ranked by their average score per game. This is helpful if we have to pick teammates, because we can quickly filter out all the lowest scoring teams, and get a rough idea of who the best is. You can also click on the buttons to view a profile of each team</div>
-</div>
+<img src = "./resources/readme_assets/home.png">
+<div>The home screen shows all teams ranked by their average score per game. This is helpful if we have to pick teammates, because we can quickly filter out all the lowest scoring teams, and get a rough idea of who the best is. You can also click on the buttons to view a profile of each team</div>
+<br>
 
-<div class = "double">
-    <img src = "./resources/readme_assets/team_info.png">
-    <div>The team info page combines all games together and creates a heatmap of cone placement. In this example dataset, we can see that Team 10332 places 15% of their cones on the high junction, and scatters the rest around that junction. They don't travel very far from their side, preferring to fight on their own turf. By looking at this data, we can gain insights into their strategy, possible synergies with us, and ways to defeat them.</div>
-</div>
+<img src = "./resources/readme_assets/team_info.png">
+<div>The team info page combines all games together and creates a heatmap of cone placement. In this example dataset, we can see that Team 10332 places 15% of their cones on the high junction, and scatters the rest around that junction. They don't travel very far from their side, preferring to fight on their own turf. By looking at this data, we can gain insights into their strategy, possible synergies with us, and ways to defeat them.</div>
+<br>
 
-<div class = "double">
 <img src = "./resources/readme_assets/new_match.png">
 <div>To record a new match, enter in the team whose perspective you will be recording, which team they will be playing on, and who they will be playing against. The app will later use this information to look through the game and generate detailed statistics</div>
-</div>
+<br>
 
-<div class = "double">
 <img src = "./resources/readme_assets/scouting.png">
 <div>The core of the program is as minimalistic as possible. There are buttons with hotkeys to specify what happened, and you click on a junction or terminal to tell where it happened. You can undo mistakes, and there is a rotate button in case you have a different view of the field, though it uses a normalized coordinate system from a singular reference frame. Finally, a timer shows how long has been spent in each mode.</div>
-</div>
+<br>
 
-<div class = "double">
 <img src = "./resources/readme_assets/search.png">
 <div>After recording games, you can search them up to get more information. Games are sorted by most recent, and include information like opponents, score, and accuracy.</div>
-</div>
+<br>
 
-<div class = "double">
 <img src = "./resources/readme_assets/auto.png">
 <img src = "./resources/readme_assets/manual.png">
-</div>
-
-<div class = "double">
 <img src = "./resources/readme_assets/combined.png">
 <div>Match info pages show cone placement, sorted by auto, manual, and combined. While a team info page can show general strategy trends, these match info pages let you see exact breakdows of a team's placements. It easily lets you see how strong a team's Autonomous mode is, where they place their beacon, and junctions they cycle onto.</div>
-</div>
+<br>
 
 
 <h2>Technical Difficulties</h2>
@@ -61,20 +52,3 @@ Even though the project was never super successful, I took a lot away from the e
 </ul>
 
 
-
-<style>
-    *{font-family: Verdana, Geneva, Tahoma, sans-serif}
-
-    .double{
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-    }
-    .double img{
-        width: 50%;
-    }
-    .double div{
-        padding-left: 20px;
-
-    }
-</style>
